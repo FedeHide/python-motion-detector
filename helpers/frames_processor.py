@@ -20,7 +20,6 @@ def process_frame(frame, first_frame=None, min_contour_area=1000):
     # apply Gaussian blur to reduce noise
     gray = cv2.GaussianBlur(gray, (21, 21), 0)
 
-    # initialize the first frame if not provided
     if first_frame is None:
         first_frame = gray
         return frame, gray, status
@@ -37,7 +36,6 @@ def process_frame(frame, first_frame=None, min_contour_area=1000):
         thresh_frame.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
     )
 
-    # process contours to detect motion
     for contour in contours:
         if cv2.contourArea(contour) < min_contour_area:
             continue

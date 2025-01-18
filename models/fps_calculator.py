@@ -1,7 +1,7 @@
 import time
 
 
-class FPSCalculator:
+class FPSCounter:
     """
     Class to calculate the frames per second (FPS) of a video stream.
     """
