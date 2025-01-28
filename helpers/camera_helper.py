@@ -13,7 +13,7 @@ def initialize_camera(index=0):
     Raises:
         ValueError: If the camera cannot be opened.
     """
-    video = cv2.VideoCapture(index)
-    if not video.isOpened():
+    video_source = cv2.VideoCapture(index)
+    if not video_source.isOpened():
         raise ValueError(f"Unable to open the camera with index {index}")
-    return video
+    return video_source
