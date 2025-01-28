@@ -24,7 +24,7 @@ class FPSCounter:
         self._fps = 0
         self._smoothing_interval = smoothing_interval
 
-    def update(self):
+    def update_frame_rate(self):
         """
         Update the frame count and calculate the FPS value.
         """
