@@ -1,4 +1,5 @@
 import cv2
+from datetime import datetime
 from models.fps_calculator import FPSCounter
 from helpers.frames_processor import process_frame
 from helpers.camera_helper import initialize_camera
@@ -31,29 +32,38 @@ def run_motion_detection():
     """
 
     status_list = [None, None]
-    times = []
-    video = None
-    try:
-        video = initialize_camera()
-        first_frame = None
+    timestamp_list = []
+    video_source = None
+    initial_frame = None
 
-        fps_calculator = FPSCounter(smoothing_interval=2)
+    try:
+        video_source = initialize_camera()
+        frame_rate_monitor = FPSCounter(smoothing_interval=2)
 
         while True:
-            check, frame = video.read()
-            if not check:
+            is_frame_read, captured_frame = video_source.read()
+            if not is_frame_read:
                 print("Failed to read frame")
                 break
 
-            frame, first_frame, status = process_frame(frame, first_frame)
+            video_frame, processed_frame, detection_status = process_frame(
+                captured_frame, initial_frame
+            )
 
-            status_list, times = handle_state_change(status_list, times, status)
+            if initial_frame is None:
+                initial_frame = processed_frame
+                continue
 
-            fps_calculator.update()
-            fps = fps_calculator.get_fps()
+            status_list, timestamp_list = handle_state_change(
+                status_list, timestamp_list, detection_status
+            )
+
+            frame_rate_monitor.update_frame_rate()
+            current_fps = frame_rate_monitor.get_fps()
+            # Display the frame rate on the video feed
             cv2.putText(
-                frame,
-                f"FPS: {fps:.2f}",
+                video_frame,
+                f"FPS: {current_fps:.2f}",
                 (10, 30),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 1,
@@ -61,9 +71,14 @@ def run_motion_detection():
                 2,
             )
 
-            cv2.imshow("Motion Detection", frame)
-            key = cv2.waitKey(10) & 0xFF
-            if key == ord("q"):
+            # Display the processed frame
+            cv2.imshow("Motion Detection", video_frame)
+
+            # Check for the 'q' key to exit the loop
+            exit_key = cv2.waitKey(10) & 0xFF
+            if exit_key == ord("q"):
+                if detection_status == 1:
+                    timestamp_list.append(datetime.now())
                 break
 
     except cv2.error as e:
@@ -76,6 +91,10 @@ def run_motion_detection():
         print(f"Unexpected error: {e}")
 
     finally:
-        if video is not None:
-            video.release()
+        if video_source is not None:
+            video_source.release()
         cv2.destroyAllWindows()
+
+
+if __name__ == "__main__":
+    run_motion_detection()
