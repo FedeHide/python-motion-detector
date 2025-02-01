@@ -19,6 +19,8 @@
 
 ### Other Changes
 
+* **docs:** fix changelog typos and links ([95c667c](https://github.com/FedeHide/python-motion-detector/commit/95c667c3b4af5e293287397831eb820567ce19b3))
+
 * **docs:** update readme ([900a580](https://github.com/FedeHide/python-motion-detector/commit/900a580473776c300df0eb76dba810580093b28b))
 
 * **refactor:** add guard clause, cleaning code and change variable names to improve code readability ([df5f026](https://github.com/FedeHide/python-motion-detector/commit/df5f0266ee7a85092640ed55a4fc10e25e028857))
