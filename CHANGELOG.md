@@ -4,26 +4,44 @@
 
 ### Features
 
-* **feat:** add method for population-based layer in Map class using json geodata ([a61c8fe](https://github.com/FedeHide/volcanopop/commit/a61c8febe50dc41ea130d718b8a70ae08b9b50f2))
+* **feat:** add helper to compute motion intervals and create a csv with those timestamps ([94429b2](https://github.com/FedeHide/python-motion-detector/commit/94429b2d320cd0f6a5122aa71ee88e504e5c6bf4))
 
-* **feat:** change icon marker to a volcano custon icon ([8e2fe48](https://github.com/FedeHide/volcanopop/commit/8e2fe481add85c8238d57a253429c99839874022))
+* **feat:** add a function to savethe time when a state change occurs ([3d2b32b](https://github.com/FedeHide/python-motion-detector/commit/3d2b32bd70dd2370236c99e8b70870ab0ac079ab))
 
-* **feat:** add methods to format popup and change color of marker by volcano elevation, improve html template ([0552ae2](https://github.com/FedeHide/volcanopop/commit/0552ae2dd73ec817b955a5af41a36d0b0c9f2d18))
+* **feat:** add a function to handle frames processing ([5bb9d49](https://github.com/FedeHide/python-motion-detector/commit/5bb9d496b4293525ecd2c1e4c3074f0380a90580))
 
-* **feat:** add dynamic volcano marker generation from CSV file with pandas ([67e7ede](https://github.com/FedeHide/volcanopop/commit/67e7ede4e592159c9fc970ea3d05921cd2bad8a2))
+* **feat:** add a function to handle camera events ([99f63f3](https://github.com/FedeHide/python-motion-detector/commit/99f63f3f4c384f506e25c15c8c2488a6cd2150f6))
+
+* **feat:** add motion detector script that initiates camera tracking frames ([bec4429](https://github.com/FedeHide/python-motion-detector/commit/bec4429153907c3c43df9bdfbc1e43d94be5e21b))
+
+* **feat:** add FPSCalculator class to calculate frames per second of a video stream ([c92635b](https://github.com/FedeHide/python-motion-detector/commit/c92635b8cdfe54cdeaab0e9585fa5710febbeb36))
+
 
 ### Fix
 
 * **hotfix:** avoid mutable default arguments in Map class constructor ([c06257a](https://github.com/FedeHide/volcanopop/commit/c06257ac8a57376b33f7444f4051dd8deae764d3))
 
-* **hotfix:** move FeatureGroup creation to create_map method due to overcreation of fg in create_marker method ([c40ca5a](https://github.com/FedeHide/volcanopop/commit/c40ca5ac81b9f72bfb3eb016c6d548461c212614))
 
 ### Other Changes
 
-* **refactor:** split functionality into separate files, improve project structure ([0a2208d](https://github.com/FedeHide/volcanopop/commit/0a2208de43296f9d1c5bbfb80cd847319131a3c1))
+* **docs:** update readme ([900a580](https://github.com/FedeHide/python-motion-detector/commit/900a580473776c300df0eb76dba810580093b28b))
 
-* **refactor:** use instance attribute data_csv_file directly, removing redundant parameter in create_map method ([22761b1](https://github.com/FedeHide/volcanopop/commit/22761b1c8e0574f767aefac75ef12777bea8ac2b))
+* **refactor:** add guard clause, cleaning code and change variable names to improve code readability ([df5f026](https://github.com/FedeHide/python-motion-detector/commit/df5f0266ee7a85092640ed55a4fc10e25e028857))
 
-* **refactor:** optimize data iteration with intertuples and improve popup with an html template ([d574192](https://github.com/FedeHide/volcanopop/commit/d5741923b7f392cbb062e1992754039c5a55b3b7))
+* **chores:** change variable names to be more descriptive ([f018a77](https://github.com/FedeHide/python-motion-detector/commit/f018a7756439ffc7800ff8a6f6e2f030a77d9836))
 
-* **refactor:** improve Map class design by avoiding mutable defaults, simplifying marker creation and enhancing reusability ([2c3be1e](https://github.com/FedeHide/volcanopop/commit/2c3be1e494eb1a002c868f6f0430d82e3ed68b44))
+* **chores:** change method name to be more descriptive ([863f3a3](https://github.com/FedeHide/python-motion-detector/commit/863f3a38c2a19e3d5791e6db6221abf1e5f7baa3))
+
+* **docs:** add todo's list text ([731c755](https://github.com/FedeHide/python-motion-detector/commit/731c755b6afeecb08d897529f8c0720d06acb4cb))
+
+* **build:** update dependencies requirements text and gitignore ([bb5b88e](https://github.com/FedeHide/python-motion-detector/commit/bb5b88ec9dc42a1096db278b15536df06a8666ff))
+
+* **chores:** change class name in fps_calculator ([4823837](https://github.com/FedeHide/python-motion-detector/commit/4823837bc5c534dd9c0bc9c9f9a273c06ff14654))
+
+* **docs:** update readme ([61267ef](https://github.com/FedeHide/python-motion-detector/commit/61267eff073169dea0ba90c9b35043f716ab890d))
+
+* **refactor:** modularize main script ([5d4869f](https://github.com/FedeHide/python-motion-detector/commit/5d4869ff44aa31af6272040af8749e2b5347cb0d))
+
+* **perf:** improve update method in FPSCalculator class to calculate FPS over a smoothing interval ([d650498](https://github.com/FedeHide/volcanopop/commit/0a2208de43296f9d1c5bbfb80cd847319131a3c1))
+
+
