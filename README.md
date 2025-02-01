@@ -11,10 +11,6 @@ This project implements a real-time motion detection system using OpenCV. The sy
 </div>
 
 
-------------
-
-<!-- ![shellsage-screenshot.webp](/public/shellsage-screenshot.webp) --> CHANGE
-
 
 ## Requirements
 
@@ -63,6 +59,15 @@ python motion_detection_main.py
 - **FPS:** The system calculates FPS in real-time to display the motion detection performance.
 - **State Handling:** If the state changes from "no motion" to "motion detected" or vice versa, the time of that change is stored in a list.
 - **Exit:** The system will stop execution when you press the q key or an error occurs.
+
+------------
+
+
+<!-- ![test_capture.jpg](/img/test_capture.jpg) -->
+<div align="center">
+  <img src="img/test_capture.jpg" alt="Test Capture" width="400">
+</div>
+
 
 ## Contribution
 
