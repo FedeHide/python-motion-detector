@@ -1,6 +1,6 @@
 # Changelog
 
-## [v0.1.0](https://github.com/FedeHide/volcanopop/releases/tag/v0.1.0) (2025-01-12)
+## [v1.0.0](https://github.com/FedeHide/python-motion-detector/releases/tag/v1.0.0) (2025-01-31)
 
 ### Features
 
@@ -15,11 +15,6 @@
 * **feat:** add motion detector script that initiates camera tracking frames ([bec4429](https://github.com/FedeHide/python-motion-detector/commit/bec4429153907c3c43df9bdfbc1e43d94be5e21b))
 
 * **feat:** add FPSCalculator class to calculate frames per second of a video stream ([c92635b](https://github.com/FedeHide/python-motion-detector/commit/c92635b8cdfe54cdeaab0e9585fa5710febbeb36))
-
-
-### Fix
-
-* **hotfix:** avoid mutable default arguments in Map class constructor ([c06257a](https://github.com/FedeHide/volcanopop/commit/c06257ac8a57376b33f7444f4051dd8deae764d3))
 
 
 ### Other Changes
