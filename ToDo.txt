@@ -1,8 +1,0 @@
-1. Mejoras Potenciales
-A- Optimización de process_frame: Podrías optimizar más el procesamiento de imágenes si consideras la utilización de un umbral adaptativo para los cambios de luminancia en los frames.
-
-B- Adición de logging: Para mejorar el seguimiento y la depuración, podrías considerar agregar un sistema de logs para registrar eventos clave, como el inicio de la detección de movimiento, el tiempo en que se detectó movimiento, etc.
-
-
-2. Sugerencias Finales
-Si el proyecto va a crecer más, considera incluir tests unitarios para las funciones más críticas, como process_frame, handle_state_change y initialize_camera, lo que facilitará la detección de errores en el futuro.
