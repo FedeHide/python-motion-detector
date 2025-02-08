@@ -22,4 +22,7 @@ def handle_state_change(status_list, timestamp_list, detection_status):
 
     status_list.append(detection_status)
 
+    if len(status_list) > 2:
+        status_list = status_list[-2:]
+
     return status_list, timestamp_list
