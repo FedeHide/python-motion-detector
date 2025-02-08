@@ -5,6 +5,7 @@ from helpers.frames_processor import process_frame
 from helpers.camera_helper import initialize_camera
 from helpers.motion_state import handle_state_change
 from helpers.motion_intervals import compute_motion_intervals
+from helpers.plotting import visualize_motion_intervals
 
 
 def run_motion_detection():
@@ -94,6 +95,7 @@ def run_motion_detection():
     finally:
         motion_intervals_df = compute_motion_intervals(timestamp_list)
         motion_intervals_df.to_csv("motion_intervals.csv", index=False)
+        visualize_motion_intervals("motion_intervals.csv")
         if video_source is not None:
             video_source.release()
         cv2.destroyAllWindows()
